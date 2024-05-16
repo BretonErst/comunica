@@ -4,7 +4,21 @@
     "href": "index.html",
     "title": "comunica",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "La Ley de los Grandes Números establece que a medida que aumenta el tamaño de una muestra, formada por valores aleatorios idénticamente distribuidos, el estadístico de interés de esa muestra se aproximará cada vez más a su valor teórico o verdadero (al valor del parámetro de la población)."
+  },
+  {
+    "objectID": "index.html#un-sólo-resultado-no-es-relevante",
+    "href": "index.html#un-sólo-resultado-no-es-relevante",
+    "title": "comunica",
+    "section": "",
+    "text": "La Ley de los Grandes Números establece que a medida que aumenta el tamaño de una muestra, formada por valores aleatorios idénticamente distribuidos, el estadístico de interés de esa muestra se aproximará cada vez más a su valor teórico o verdadero (al valor del parámetro de la población)."
+  },
+  {
+    "objectID": "index.html#simulación-del-lanzamiento-de-un-dado",
+    "href": "index.html#simulación-del-lanzamiento-de-un-dado",
+    "title": "comunica",
+    "section": "Simulación Del Lanzamiento De Un Dado",
+    "text": "Simulación Del Lanzamiento De Un Dado\nPiense en el lanzamiento de un dado ordinario. Cuando el dado se lanza sólo unas cuantas veces, es posible que se obtenga un resultado inesperado, como calcular la probabilidad de obtener un 2 igual a 1.0. En cambio, si el dado se lanza muchas veces, digamos cientos o miles de veces, la frecuencia con la que observa cada número tenderá a acercarse a la probabilidad verdadera (teórica) de sacar, efectivamente, cada número, que es exactamente \\(\\frac{1}{6}\\) para cada cara del dado.\n\n\n\nDistribución uniforme teórica del resultado del lanzamiento de un dado. Imagen: analystprep.com\n\n\n\nFunción para realizar la simulación\nEn primer término importamos el metapaquete {tidyverse}.\n\n1 + 1\n\n[1] 2\n\n\nDefinimos la función para realizar una simulación del lanzamiento de un dado permitiéndole al usuario determinar el número de lanzamientos a observar y seleccionar la cara que desea.\n\n\nConclusión\nDespués de realizar simulaciones del lanzamiento de un dado con diferentes cantidades de repeticiones (5, 50 y 5,000), podemos podemos que, a medida que aumenta el número de repeticiones, el valor de los resultados simulados se acerca cada vez más al valor verdadero (0.16 para la probabilidad de obtener una cara determinada)."
   },
   {
     "objectID": "about.html",

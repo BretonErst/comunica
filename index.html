@@ -101,6 +101,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -142,7 +171,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#un-sólo-resultado-no-es-relevante" id="toc-un-sólo-resultado-no-es-relevante" class="nav-link active" data-scroll-target="#un-sólo-resultado-no-es-relevante">Un Sólo Resultado No Es Relevante</a></li>
+  <li><a href="#simulación-del-lanzamiento-de-un-dado" id="toc-simulación-del-lanzamiento-de-un-dado" class="nav-link" data-scroll-target="#simulación-del-lanzamiento-de-un-dado">Simulación Del Lanzamiento De Un Dado</a>
+  <ul class="collapse">
+  <li><a href="#función-para-realizar-la-simulación" id="toc-función-para-realizar-la-simulación" class="nav-link" data-scroll-target="#función-para-realizar-la-simulación">Función para realizar la simulación</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -166,16 +206,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<section id="un-sólo-resultado-no-es-relevante" class="level2">
+<h2 class="anchored" data-anchor-id="un-sólo-resultado-no-es-relevante">Un Sólo Resultado No Es Relevante</h2>
+<p>La Ley de los Grandes Números establece que a medida que aumenta el tamaño de una muestra, formada por valores aleatorios idénticamente distribuidos, el estadístico de interés de esa muestra se aproximará cada vez más a su valor teórico o verdadero (al valor del parámetro de la población).</p>
+</section>
+<section id="simulación-del-lanzamiento-de-un-dado" class="level2">
+<h2 class="anchored" data-anchor-id="simulación-del-lanzamiento-de-un-dado">Simulación Del Lanzamiento De Un Dado</h2>
+<p>Piense en el lanzamiento de un dado ordinario. Cuando el dado se lanza sólo unas cuantas veces, es posible que se obtenga un resultado inesperado, como calcular la probabilidad de obtener un <code>2</code> igual a <code>1.0</code>. En cambio, si el dado se lanza muchas veces, digamos cientos o miles de veces, la frecuencia con la que observa cada número tenderá a acercarse a la probabilidad verdadera (teórica) de sacar, efectivamente, cada número, que es exactamente <span class="math inline">\(\frac{1}{6}\)</span> para cada cara del dado.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/Captura de pantalla 2024-05-16 a la(s) 11.02.53-01.png" class="img-fluid figure-img" width="534"></p>
+<figcaption>Distribución uniforme teórica del resultado del lanzamiento de un dado. Imagen: analystprep.com</figcaption>
+</figure>
+</div>
+<section id="función-para-realizar-la-simulación" class="level3">
+<h3 class="anchored" data-anchor-id="función-para-realizar-la-simulación">Función para realizar la simulación</h3>
+<p>En primer término importamos el metapaquete {tidyverse}.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
+<p>Definimos la función para realizar una simulación del lanzamiento de un dado permitiéndole al usuario determinar el número de lanzamientos a observar y seleccionar la cara que desea.</p>
+</section>
+<section id="conclusión" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión">Conclusión</h3>
+<p>Después de realizar simulaciones del lanzamiento de un dado con diferentes cantidades de repeticiones (5, 50 y 5,000), podemos podemos que, a medida que aumenta el número de repeticiones, el valor de los resultados simulados se acerca cada vez más al valor verdadero (0.16 para la probabilidad de obtener una cara determinada).</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
