@@ -17,8 +17,6 @@ format:
     code-block-border-left: "darkorange"
     code-block-bg: true
     fig-align: left
-    grid: 
-      content-mode: full
 
 
 editor: visual
