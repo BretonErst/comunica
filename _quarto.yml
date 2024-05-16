@@ -19,8 +19,7 @@ format:
     fig-align: left
     grid: 
       content-mode: full
-      margin-width: 150px
-      sidebar-width: 200px
+
 
 editor: visual
 
