@@ -71,7 +71,7 @@ Y por último para 5,000 lanzamientos.
 
 ```{r}
 
-# 50,000 lanzamientos, selección 4
+# 5,000 lanzamientos, selección 4
 lanza_dado(seleccion = 4, num_lanzamientos = 5000)
 ```
 
