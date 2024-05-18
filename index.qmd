@@ -1,5 +1,6 @@
 ---
 title: "comunica"
+author: "Juan L. Bretón, PMP"
 ---
 
 ## Un Sólo Resultado No Es Relevante
