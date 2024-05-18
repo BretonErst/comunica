@@ -17,6 +17,8 @@ Piense en el lanzamiento de un dado ordinario. Cuando el dado se lanza sólo una
 En primer término importamos el metapaquete {tidyverse}.
 
 ```{r}
+#| warning: false
+#| message: false
 
 # librerías
 library(tidyverse)
