@@ -10,7 +10,7 @@ La Ley de los Grandes Números establece que a medida que aumenta el tamaño de 
 
 Piense en el lanzamiento de un dado ordinario. Cuando el dado se lanza sólo unas cuantas veces, es posible que se obtenga un resultado inesperado, como calcular la probabilidad de obtener un `2` igual a `1.0`. En cambio, si el dado se lanza muchas veces, digamos cientos o miles de veces, la frecuencia con la que observa cada número tenderá a acercarse a la probabilidad verdadera (teórica) de sacar, efectivamente, cada número, que es exactamente $\frac{1}{6}$ para cada cara del dado.
 
-![Distribución uniforme teórica del resultado del lanzamiento de un dado. Imagen: analystprep.com](images/Captura de pantalla 2024-05-16 a la(s) 11.02.53-01.png){width="534"}
+![Distribución uniforme teórica del resultado del lanzamiento de un dado. Imagen: analystprep.com](images/Captura%20de%20pantalla%202024-05-16%20a%20la(s)%2011.02.53-01.png){width="534"}
 
 ### Función para realizar la simulación
 
@@ -18,10 +18,64 @@ En primer término importamos el metapaquete {tidyverse}.
 
 ```{r}
 
-1 + 1
+# librerías
+library(tidyverse)
 ```
 
 Definimos la función para realizar una simulación del lanzamiento de un dado permitiéndole al usuario determinar el número de lanzamientos a observar y seleccionar la cara que desea.
+
+El resultado de la función debe ser la gráfica que contenga el resultado de la probabilidad observada de obtener como resultado .
+
+```{r}
+
+# función para simulación
+lanza_dado <- function(seleccion, num_lanzamientos) {
+  dados <- data.frame(
+    x1 = sample(x = 1:6, size = num_lanzamientos, replace = TRUE))
+  
+  dados <- dados |> 
+    mutate(sel = ifelse(x1 == seleccion, 1, 0),
+           acumu = cumsum(sel),
+           tot_tiros = seq(from = 1, to = num_lanzamientos),
+           prob = acumu / tot_tiros)
+  
+  dados |> 
+    ggplot(aes(tot_tiros, prob)) +
+    geom_hline(yintercept = 1/6, color = "darkred", linewidth = 0.35) +
+    geom_line(color = "blue") +
+    ylim(0, 1) +
+    labs(title = "Ley de los Grandes Números en Acción",
+         subtitle = paste("Lanzamiento de un dado. Selección: ", seleccion),
+         x = "Número total de lanzamientos",
+         y = "Probabilidad de observar la selección")
+}
+```
+
+Ejecutaremos la función para 5 lanzamientos; con la intención de observar la probabilidad de sacar un 4.
+
+```{r}
+
+# 5 lanzamientos, selección 4
+lanza_dado(seleccion = 4, num_lanzamientos = 5)
+```
+
+Ahora ejecutaremos la función para 50 lanzamientos.
+
+```{r}
+
+# 50 lanzamientos, selección 4
+lanza_dado(seleccion = 4, num_lanzamientos = 50)
+```
+
+Y por último para 5,000 lanzamientos.
+
+```{r}
+
+# 50,000 lanzamientos, selección 4
+lanza_dado(seleccion = 4, num_lanzamientos = 5000)
+```
+
+### 
 
 ### Conclusión
 
