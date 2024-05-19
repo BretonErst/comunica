@@ -1,9 +1,8 @@
 ---
-title: "About"
+title: "Juan L. Bretón, PMP"
+about:
+  template: jolla
+  image: icon_jlbe.jpg
 ---
 
-About this site
-
-```{r}
-1 + 1
-```
+En el área de la Ciencia de Datos ha sido promotor de la cultura impulsada por datos y ha enfocado sus esfuerzos y su pasión por aprovechar el poder de los algoritmos y la tecnología de vanguardia en el desarrollo e implementación de modelos de analítica predictiva con una visión orientada a ofrecer soluciones basadas en datos a desafíos organizacionales complejos.
