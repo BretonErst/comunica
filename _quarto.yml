@@ -7,8 +7,11 @@ website:
     left:
       - href: index.qmd
         text: Inicio
-      - demo.qmd  
-      - about.qmd
+      - href: demo.qmd
+        text: Grandes Números
+      - href: abour.qmd
+        text: Acerca de
+
 
 format:
   html:
