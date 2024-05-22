@@ -9,7 +9,7 @@ website:
         text: Inicio
       - href: demo.qmd
         text: Grandes Números
-      - href: abour.qmd
+      - href: about.qmd
         text: Acerca de
 
 
