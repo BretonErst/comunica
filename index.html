@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Juan L. Bretón, PMP">
 
 <title>comunica</title>
 <style>
@@ -20,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -102,35 +67,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -158,11 +94,11 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./demo.html"> 
-<span class="menu-text">Demo</span></a>
+<span class="menu-text">Grandes Números</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">Juan L. Bretón, PMP</span></a>
+    <a class="nav-link" href="./abour.qmd"> 
+<span class="menu-text">Acerca de</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -180,13 +116,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#un-sólo-resultado-no-es-relevante" id="toc-un-sólo-resultado-no-es-relevante" class="nav-link active" data-scroll-target="#un-sólo-resultado-no-es-relevante">Un Sólo Resultado No Es Relevante</a></li>
-  <li><a href="#simulación-del-lanzamiento-de-un-dado" id="toc-simulación-del-lanzamiento-de-un-dado" class="nav-link" data-scroll-target="#simulación-del-lanzamiento-de-un-dado">Simulación Del Lanzamiento De Un Dado</a>
-  <ul class="collapse">
-  <li><a href="#función-para-realizar-la-simulación" id="toc-función-para-realizar-la-simulación" class="nav-link" data-scroll-target="#función-para-realizar-la-simulación">Función para realizar la simulación</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
-  </ul></li>
+  <li><a href="#bienvenido" id="toc-bienvenido" class="nav-link active" data-scroll-target="#bienvenido">Bienvenido</a></li>
   </ul>
 </nav>
     </div>
@@ -202,12 +132,6 @@ window.Quarto = {
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Juan L. Bretón, PMP </p>
-          </div>
-  </div>
     
   
     
@@ -218,97 +142,10 @@ window.Quarto = {
 </header>
 
 
-<section id="un-sólo-resultado-no-es-relevante" class="level2">
-<h2 class="anchored" data-anchor-id="un-sólo-resultado-no-es-relevante">Un Sólo Resultado No Es Relevante</h2>
-<p>La Ley de los Grandes Números establece que a medida que aumenta el tamaño de una muestra, formada por valores aleatorios idénticamente distribuidos, el estadístico de interés de esa muestra se aproximará cada vez más a su valor teórico o verdadero (al valor del parámetro de la población).</p>
-</section>
-<section id="simulación-del-lanzamiento-de-un-dado" class="level2">
-<h2 class="anchored" data-anchor-id="simulación-del-lanzamiento-de-un-dado">Simulación Del Lanzamiento De Un Dado</h2>
-<p>Piense en el lanzamiento de un dado ordinario. Cuando el dado se lanza sólo unas cuantas veces, es posible que se obtenga un resultado inesperado, como calcular la probabilidad de obtener un <code>2</code> igual a <code>1.0</code>. En cambio, si el dado se lanza muchas veces, digamos cientos o miles de veces, la frecuencia con la que observa cada número tenderá a acercarse a la probabilidad verdadera (teórica) de sacar, efectivamente, cada número, que es exactamente <span class="math inline">\(\frac{1}{6}\)</span> para cada cara del dado.</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="images/Captura de pantalla 2024-05-16 a la(s) 11.02.53-01.png" class="img-fluid figure-img" width="534"></p>
-<figcaption>Distribución uniforme teórica del resultado del lanzamiento de un dado. Imagen: analystprep.com</figcaption>
-</figure>
-</div>
-<section id="función-para-realizar-la-simulación" class="level3">
-<h3 class="anchored" data-anchor-id="función-para-realizar-la-simulación">Función para realizar la simulación</h3>
-<p>En primer término importamos el metapaquete {tidyverse}.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># librerías</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Definimos la función para realizar una simulación del lanzamiento de un dado permitiéndole al usuario determinar el número de lanzamientos a observar y seleccionar la cara que desea.</p>
-<p>El resultado de la función debe ser la gráfica que contenga el resultado de la probabilidad observada de obtener como resultado .</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># función para simulación</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>lanza_dado <span class="ot">&lt;-</span> <span class="cf">function</span>(seleccion, num_lanzamientos) {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x1 =</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> num_lanzamientos, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  dados <span class="ot">&lt;-</span> dados <span class="sc">|&gt;</span> </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">sel =</span> <span class="fu">ifelse</span>(x1 <span class="sc">==</span> seleccion, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">acumu =</span> <span class="fu">cumsum</span>(sel),</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">tot_tiros =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> num_lanzamientos),</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">prob =</span> acumu <span class="sc">/</span> tot_tiros)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  dados <span class="sc">|&gt;</span> </span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(tot_tiros, prob)) <span class="sc">+</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>, <span class="at">color =</span> <span class="st">"darkred"</span>, <span class="at">linewidth =</span> <span class="fl">0.35</span>) <span class="sc">+</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Ley de los Grandes Números en Acción"</span>,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"Lanzamiento de un dado. Selección: "</span>, seleccion),</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Número total de lanzamientos"</span>,</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Probabilidad de observar la selección"</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Ejecutaremos la función para 5 lanzamientos; con la intención de observar la probabilidad de sacar un 4.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5 lanzamientos, selección 4</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lanza_dado</span>(<span class="at">seleccion =</span> <span class="dv">4</span>, <span class="at">num_lanzamientos =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Ahora ejecutaremos la función para 50 lanzamientos.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 50 lanzamientos, selección 4</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lanza_dado</span>(<span class="at">seleccion =</span> <span class="dv">4</span>, <span class="at">num_lanzamientos =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Y por último para 5,000 lanzamientos.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 50,000 lanzamientos, selección 4</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lanza_dado</span>(<span class="at">seleccion =</span> <span class="dv">4</span>, <span class="at">num_lanzamientos =</span> <span class="dv">5000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
-</section>
-<section id="conclusión" class="level3">
-<h3 class="anchored" data-anchor-id="conclusión">Conclusión</h3>
-<p>Después de realizar simulaciones del lanzamiento de un dado con diferentes cantidades de repeticiones (5, 50 y 5,000), podemos podemos que, a medida que aumenta el número de repeticiones, el valor de los resultados simulados se acerca cada vez más al valor verdadero (0.16 para la probabilidad de obtener una cara determinada).</p>
+<section id="bienvenido" class="level2">
+<h2 class="anchored" data-anchor-id="bienvenido">Bienvenido</h2>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
